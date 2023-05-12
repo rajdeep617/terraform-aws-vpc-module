@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
 locals {
   public_subnet_count  = var.create_public_subnets ? length(var.azs) : 0
   private_subnet_count = var.create_private_subnets ? length(var.azs) : 0
